@@ -6,9 +6,10 @@
 #include "pacer.h"
 #include "ir_uart.h"
 #include "tinygl.h"
+#include "button.h"
 #include "../fonts/font5x7_1.h"
 
-#define PACER_RATE 1000
+#define PACER_RATE 500
 #define MESSAGE_RATE 20
 
 /**Function to initialise modules*/

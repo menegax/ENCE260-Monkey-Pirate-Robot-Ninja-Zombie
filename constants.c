@@ -6,6 +6,30 @@
 
 #include "pio.h"
 
+#define BLINK_RATE 200
+
+uint8_t x_pos = 2;
+uint8_t y_pos = 3;
+uint8_t prev_pos_x = 0;
+uint8_t current_column = 0;
+uint16_t blinker_count = 0;
+uint16_t ships = 0;
+
+uint8_t shipmap[] =
+{
+    0x0, 0x0, 0x0, 0x0, 0x0
+};
+
+uint8_t navswitch_map[] =
+{
+    0x0, 0x0, 0x0, 0x0, 0x0
+};
+
+uint8_t emptymap[] =
+{
+    0x0, 0x0, 0x0, 0x0, 0x0
+};
+
 const pio_t rows[] =
 {
     LEDMAT_ROW1_PIO, LEDMAT_ROW2_PIO, LEDMAT_ROW3_PIO,

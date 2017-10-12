@@ -3,9 +3,11 @@
 #include "pacer.h"
 #include "ir_uart.h"
 #include "tinygl.h"
+#include "button.h"
 #include "../fonts/font5x7_1.h"
+#include "pio.h"
 
-#define LOOP_RATE 1000
+#define LOOP_RATE 500
 #define MESSAGE_RATE 20
 
 void game_init(void)
@@ -14,6 +16,20 @@ void game_init(void)
     navswitch_init();
     pacer_init (LOOP_RATE);
     ir_uart_init();
+    button_init ();
+        
+    pio_config_set(LEDMAT_ROW1_PIO, PIO_OUTPUT_LOW);
+    pio_config_set(LEDMAT_ROW2_PIO, PIO_OUTPUT_LOW);
+    pio_config_set(LEDMAT_ROW3_PIO, PIO_OUTPUT_LOW);
+    pio_config_set(LEDMAT_ROW4_PIO, PIO_OUTPUT_LOW);
+    pio_config_set(LEDMAT_ROW5_PIO, PIO_OUTPUT_LOW);
+    pio_config_set(LEDMAT_ROW6_PIO, PIO_OUTPUT_LOW);
+    pio_config_set(LEDMAT_ROW7_PIO, PIO_OUTPUT_LOW);
+    pio_config_set(LEDMAT_COL1_PIO, PIO_OUTPUT_LOW);   
+    pio_config_set(LEDMAT_COL2_PIO, PIO_OUTPUT_LOW);           
+    pio_config_set(LEDMAT_COL3_PIO, PIO_OUTPUT_LOW);           
+    pio_config_set(LEDMAT_COL4_PIO, PIO_OUTPUT_LOW);                   
+    pio_config_set(LEDMAT_COL5_PIO, PIO_OUTPUT_LOW); 
 
     tinygl_init (LOOP_RATE);
     tinygl_font_set (&font5x7_1);

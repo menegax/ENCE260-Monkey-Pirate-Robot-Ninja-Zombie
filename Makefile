@@ -16,7 +16,7 @@ all: game.out
 
 
 # Compile: create object files from C source files.
-game.o: game.c init.h
+game.o: game.c init.h setup.h constants.h common_functions.h
 	$(CC) -c $(CFLAGS) $< -o $@
 
 system.o: ../../drivers/avr/system.c ../../drivers/avr/system.h
@@ -37,7 +37,7 @@ pacer.o: ../../utils/pacer.c ../../drivers/avr/system.h ../../drivers/avr/timer.
 tinygl.o: ../../utils/tinygl.c ../../drivers/avr/system.h ../../drivers/display.h ../../utils/font.h ../../utils/tinygl.h
 	$(CC) -c $(CFLAGS) $< -o $@
 
-init.o: init.c init.h ../../drivers/avr/system.h ../../drivers/navswitch.h ../../utils/pacer.h ../../drivers/avr/ir_uart.h ../../utils/tinygl.h ../../fonts/font5x7_1.h
+init.o: init.c init.h ../../drivers/avr/system.h ../../drivers/navswitch.h ../../utils/pacer.h ../../drivers/avr/ir_uart.h ../../utils/tinygl.h ../../fonts/font5x7_1.h ../../drivers/avr/pio.h
 	$(CC) -c $(CFLAGS) $< -o $@
 
 pio.o: ../../drivers/avr/pio.c ../../drivers/avr/pio.h ../../drivers/avr/system.h
@@ -61,8 +61,20 @@ ledmat.o: ../../drivers/ledmat.c ../../drivers/avr/pio.h ../../drivers/avr/syste
 font.o: ../../utils/font.c ../../drivers/avr/system.h ../../utils/font.h
 	$(CC) -c $(CFLAGS) $< -o $@
 
+button.o: ../../drivers/button.c ../../drivers/avr/pio.h ../../drivers/avr/system.h ../../drivers/button.h
+	$(CC) -c $(CFLAGS) $< -o $@
+
+setup.o: setup.c setup.h constants.h common_functions.h
+	$(CC) -c $(CFLAGS) $< -o $@
+
+common_functions.o: common_functions.c common_functions.h constants.h init.h
+	$(CC) -c $(CFLAGS) $< -o $@
+
+constants.o: constants.c constants.h ../../drivers/avr/pio.h
+	$(CC) -c $(CFLAGS) $< -o $@
+
 # Link: create ELF output file from object files.
-game.out: game.o system.o ir_uart.o navswitch.o pacer.o tinygl.o init.o pio.o timer.o display.o ledmat.o font.o usart1.o timer0.o prescale.o
+game.out: game.o system.o ir_uart.o navswitch.o pacer.o tinygl.o init.o pio.o timer.o display.o ledmat.o font.o usart1.o timer0.o prescale.o button.o setup.o common_functions.o constants.o
 	$(CC) $(CFLAGS) $^ -o $@ -lm 
 	$(SIZE) $@
 
