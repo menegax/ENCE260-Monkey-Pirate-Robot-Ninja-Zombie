@@ -5,6 +5,8 @@ created by Joshua Meneghini and Jonathan Hills
 
 #include "constants.h"
 #include "init.h"
+#include "tinygl.h"
+
 
 /**Used to display bitmap*/
 void display_column (uint8_t row_pattern, uint8_t current_column)
@@ -86,4 +88,23 @@ void display_emptymap (void)
 {
     display_column (emptymap[current_column], current_column);
     pacer_wait ();
+}
+
+/**Compares the two options to decide on a winner and displays winner**/
+void compare(char playerChoice, char opponentChoice)
+{
+    tinygl_text_mode_set(TINYGL_TEXT_MODE_SCROLL);
+    
+    if (playerChoice == opponentChoice) {
+        tinygl_text("DRAW");
+    } else if (playerChoice == 'S' && opponentChoice == 'P') {
+        tinygl_text("YOU WIN!");
+    } else if (playerChoice == 'P' && opponentChoice == 'R') {
+        tinygl_text("YOU WIN!");
+    } else if (playerChoice == 'R' && opponentChoice == 'S') {
+        tinygl_text("YOU WIN!");
+    } else {
+        tinygl_text("YOU LOSE!");
+    }
+    //Could expand this to return a 1 for a win or 0 otherwise and display a count of all wins
 }

@@ -22,4 +22,7 @@ void display_shipmap (void);
 /**Function to display empty map*/
 void display_emptymap (void);
 
+/**Compares the two options to decide on a winner and displays winner**/
+void compare(char playerChoice, char opponentChoice);
+
 #endif
