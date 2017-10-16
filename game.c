@@ -41,7 +41,7 @@ int main (void)
     
     uint8_t current_column = 0;
     
-    tinygl_text("PAPER SCISSORS ROCK");
+    tinygl_text("Monkey-Pirate-Robot-Ninja-Zombie");
     
     while (1)
     {

@@ -97,11 +97,15 @@ void compare(char playerChoice, char opponentChoice)
     
     if (playerChoice == opponentChoice) {
         tinygl_text("DRAW");
-    } else if (playerChoice == 'S' && opponentChoice == 'P') {
+    } else if ((playerChoice == 'M' && opponentChoice == 'N') || (playerChoice == 'M' && opponentChoice == 'R')) {
         tinygl_text("YOU WIN!");
-    } else if (playerChoice == 'P' && opponentChoice == 'R') {
+    } else if ((playerChoice == 'R' && opponentChoice == 'N') || (playerChoice == 'R' && opponentChoice == 'Z')) {
         tinygl_text("YOU WIN!");
-    } else if (playerChoice == 'R' && opponentChoice == 'S') {
+    } else if ((playerChoice == 'P' && opponentChoice == 'R') || (playerChoice == 'P' && opponentChoice == 'M')) {
+        tinygl_text("YOU WIN!");
+    } else if ((playerChoice == 'N' && opponentChoice == 'P') || (playerChoice == 'N' && opponentChoice == 'Z')) {
+        tinygl_text("YOU WIN!");
+    } else if ((playerChoice == 'Z' && opponentChoice == 'P') || (playerChoice == 'Z' && opponentChoice == 'M')) {
         tinygl_text("YOU WIN!");
     } else {
         tinygl_text("YOU LOSE!");
