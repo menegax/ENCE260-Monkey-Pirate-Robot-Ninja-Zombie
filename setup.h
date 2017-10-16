@@ -11,4 +11,7 @@
 /**Planning phase function (Step 1)*/
 void game_setup (void);
 
+/**Assigns each board a player number**/
+void player_setup(void);
+
 #endif
