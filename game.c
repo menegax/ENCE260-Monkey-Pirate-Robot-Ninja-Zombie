@@ -1,7 +1,8 @@
 /**
- * Battleship game 
+ * Paper Scissors Rock game 
+ * Paper Scissors Rock game 
  * authors: Joshua Meneghini and Jonathan Hills
- * jam357 and ...??
+ * jam357 and jhi57
  */
 
 #include "init.h"
@@ -40,7 +41,7 @@ int main (void)
     
     uint8_t current_column = 0;
     
-    tinygl_text("BATTLESHIP");
+    tinygl_text("PAPER SCISSORS ROCK");
     
     while (1)
     {

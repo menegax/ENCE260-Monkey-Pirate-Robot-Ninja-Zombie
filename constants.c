@@ -14,6 +14,7 @@ uint8_t prev_pos_x = 0;
 uint8_t current_column = 0;
 uint16_t blinker_count = 0;
 uint16_t ships = 0;
+int playerNum = 0;
 
 uint8_t shipmap[] =
 {
@@ -42,3 +43,4 @@ const pio_t cols[] =
     LEDMAT_COL1_PIO, LEDMAT_COL2_PIO, LEDMAT_COL3_PIO,
     LEDMAT_COL4_PIO, LEDMAT_COL5_PIO
 };
+

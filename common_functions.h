@@ -25,4 +25,10 @@ void display_emptymap (void);
 /**Compares the two options to decide on a winner and displays winner**/
 void compare(char playerChoice, char opponentChoice);
 
+/**Returns if the board is player 1 or 2**/
+int getPlayer(void);
+
+/**Sets a board to be player 1**/
+void setPlayer(void);
+
 #endif

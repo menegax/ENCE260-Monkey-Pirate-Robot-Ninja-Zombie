@@ -108,3 +108,19 @@ void compare(char playerChoice, char opponentChoice)
     }
     //Could expand this to return a 1 for a win or 0 otherwise and display a count of all wins
 }
+
+/**Returns if the board is player 1 or 2**/
+int getPlayer(void)
+{
+    if (playerNum == 1) {
+        return 1;
+    } else {
+        return 0;
+    }
+}
+
+/**Sets a board to be player 1**/
+void setPlayer(void)
+{
+    playerNum = 1;
+}

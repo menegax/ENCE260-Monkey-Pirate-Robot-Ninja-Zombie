@@ -11,6 +11,7 @@ uint8_t prev_pos_x;
 uint8_t current_column;
 uint16_t blinker_count;
 uint16_t ships;
+int playerNum;
 
 uint8_t shipmap[5];
 
