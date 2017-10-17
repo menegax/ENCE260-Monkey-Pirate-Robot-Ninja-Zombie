@@ -16,7 +16,8 @@ uint16_t blinker_count = 0;
 uint16_t ships = 0;
 int playerNum = 0;
 char playerChoice = 'M';
-char opponentChoice;
+char opponentChoice = 0;
+int received = 0;
 int result = 0;
 
 uint8_t shipmap[] =

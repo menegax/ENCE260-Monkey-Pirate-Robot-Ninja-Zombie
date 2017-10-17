@@ -74,24 +74,29 @@ int main (void)
         }
         
     }
-    
-    /*TODO*/
+  
     game_setup ();
     choose_action();
-    if (playerNum == 0){
+    while(1){
+        if (playerNum == 0){
         send_choice();  
-    } 
-    if (playerNum == 1) {
-        receive_option();
-    }
-    if (playerNum == 1){
-        send_choice();
-    } 
-    if (playerNum == 0) {
-        receive_option();
+        } 
+        if (playerNum == 1) {
+            receive_option();
+        }
+        if (playerNum == 1 && received == 1){
+            send_choice();
+        } 
+        if (playerNum == 0) {
+            receive_option();
+        }
+        if (received == 1){
+            win_or_lose(result); 
+        }
+        // Reset shit here
     }
     
-    win_or_lose(result);
+
 
     return 0;
 }
