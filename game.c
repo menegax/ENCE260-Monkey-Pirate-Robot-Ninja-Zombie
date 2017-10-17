@@ -82,6 +82,7 @@ int main (void)
             choose_action();
         }
         while(1){
+            button_update();
             tinygl_update();
             if (playerNum == 0 && sent == 0){
                 send_choice();  
