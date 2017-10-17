@@ -10,29 +10,29 @@ void send_choice (void)
 {
     if (playerNum == 0) {
         if (playerChoice == 'M') {
-            ir_uart_putc(1);
+            ir_uart_putc('M');
         }
         else if (playerChoice  == 'R') {
-            ir_uart_putc(2);
+            ir_uart_putc('R');
         }
         else if (playerChoice  == 'P') {
-            ir_uart_putc(3);
+            ir_uart_putc('P');
         }
         else if (playerChoice  == 'N') {
-            ir_uart_putc(4);
+            ir_uart_putc('N');
         }
         else if (playerChoice  == 'Z') {
-            ir_uart_putc(5);
+            ir_uart_putc('Z');
         }
     }
     else {
         compare(playerChoice, opponentChoice);
-        if (result == 6) {
-            ir_uart_putc(8);
-        } else if (result == 8) {
-            ir_uart_putc(6);
+        if (result == 'W') {
+            ir_uart_putc(76);
+        } else if (result == 'L') {
+            ir_uart_putc(87);
         } else {
-            ir_uart_putc(result);
+            ir_uart_putc('D');
         }
     }
 }

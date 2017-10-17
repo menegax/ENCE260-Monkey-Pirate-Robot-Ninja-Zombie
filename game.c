@@ -82,13 +82,10 @@ int main (void)
     while(1){
         tinygl_update();
         if (playerNum == 0){
-        send_choice();  
+            send_choice();  
         } 
         if (playerNum == 1) {
             receive_option();
-            buffer[0] = opponentChoice;
-            buffer[1] = '\0';
-            tinygl_text(buffer);
         }
         if (playerNum == 1 && received == 1){
             send_choice();

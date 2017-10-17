@@ -87,35 +87,39 @@ void compare(char playerChoice, char opponentChoice)
 {
     tinygl_text_mode_set(TINYGL_TEXT_MODE_SCROLL);
     if (playerChoice == opponentChoice) {
-        result = 7;
+        result = 'D';
     } else if ((playerChoice == 'M' && opponentChoice == 'N') || (playerChoice == 'M' && opponentChoice == 'R')) {
-        result = 6;
+        result = 'W';
     } else if ((playerChoice == 'R' && opponentChoice == 'N') || (playerChoice == 'R' && opponentChoice == 'Z')) {
-        result = 6;
+        result = 'W';
     } else if ((playerChoice == 'P' && opponentChoice == 'R') || (playerChoice == 'P' && opponentChoice == 'M')) {
-        result = 6;
+        result = 'W';
     } else if ((playerChoice == 'N' && opponentChoice == 'P') || (playerChoice == 'N' && opponentChoice == 'Z')) {
-        result = 6;
+        result = 'W';
     } else if ((playerChoice == 'Z' && opponentChoice == 'P') || (playerChoice == 'Z' && opponentChoice == 'M')) {
-        result = 6;
+        result = 'W';
     } else {
-        result = 8;
+        result = 'L';
     }
     //Could expand this to return a 1 for a win or 0 otherwise and display a count of all wins
 }
 
 void win_or_lose(int outcome) 
 {
-    tinygl_text_mode_set(TINYGL_TEXT_MODE_SCROLL);
-    if (outcome == 6) {
-        tinygl_text("YOU WON!");
+    tinygl_text_mode_set(TINYGL_TEXT_MODE_STEP);
+    if (outcome == 87 || outcome == 6) {
+        tinygl_text("W");
     }
-    else if (outcome == 8) {
-        tinygl_text("YOU LOST!");
+    else if (outcome == 76 || outcome == 8) {
+        tinygl_text("L");
     }
     else {
-        tinygl_text("YOU DREW!");
-    }
+        tinygl_text("D");
+    }/*
+    char buffer[2];
+    buffer[0] = outcome;
+    buffer[1] = '\0';
+    tinygl_text(buffer);*/
 } 
 
 /**Returns if the board is player 1 or 2**/
