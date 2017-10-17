@@ -10,6 +10,7 @@
 #include "constants.h"
 #include "common_functions.h"
 #include "sending.h"
+#include "receiver.h"
 
 static int previous_col;
 
@@ -77,18 +78,18 @@ int main (void)
     /*TODO*/
     game_setup ();
     choose_action();
-    if (getPlayer == 0){
-        send_choice()
+    if (playerNum == 0){
+        send_choice();  
     } 
-    if (getPlayer == 1) {
-        receive_option();
-    }
-    if (getPlayer == 1){
-        send_choice()
+   // if (playerNum == 1) {
+   //     receive_option();
+  //  }
+    if (playerNum == 1){
+        send_choice();
     } 
-    if (getPlayer == 0) {
-        receive_option();
-    }
+    //if (playerNum == 0) {
+   //     receive_option();
+   // }
 
     return 0;
 }

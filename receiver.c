@@ -3,7 +3,7 @@
 /**Reads input from the opposite board. **/
 void receive_option(void)
 {   
-    if (getPlayer() == 1) {
+    if (playerNum == 1) {
         //The opponents choice
         if (ir_uart_read_ready_p()) {
             opponentChoice = ir_uart_getc();
