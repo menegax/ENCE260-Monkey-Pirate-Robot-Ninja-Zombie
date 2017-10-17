@@ -39,9 +39,7 @@ int main (void)
 {
     game_init ();
     
-    uint8_t current_column = 0;
-    char choice;
-    
+    uint8_t current_column = 0;    
     tinygl_text("Monkey-Pirate-Robot-Ninja-Zombie");
     
     while (1)
@@ -77,7 +75,7 @@ int main (void)
     
     /*TODO*/
     game_setup ();
-    choice = choose_action();
+    choose_action();
     // send(choice);
     // opponentChoice = receive();
     // compare(choice, opponentChoice);

@@ -9,51 +9,49 @@
 
 
 /**Determines which option the player chooses**/
-char choose_action(void)
+void choose_action(void)
 {
-    char choice = 'M';
     navswitch_init();
     button_init();
     tinygl_text_mode_set(TINYGL_TEXT_MODE_STEP);
-
+    char buffer[2];
     while(1) {
         pacer_wait();
         navswitch_update();
         tinygl_update();
         button_update();
-        char buffer[2];
+        buffer[0] = playerChoice;
+        buffer[1] = '\0';
+        tinygl_text(buffer);
+        navswitch_moved();
+        
+/*
+        if(playerChoice == 'M') {
 
-        if(choice == 'M') {
-            buffer[0] = choice;
+        } 
+        else if(playerChoice == 'R') {
+            buffer[0] = playerChoice;
             buffer[1] = '\0';
             tinygl_text(buffer);
         } 
-        else if(choice == 'R') {
-            buffer[0] = choice;
+        else if(playerChoice == 'P') {
+            buffer[0] = playerChoice;
             buffer[1] = '\0';
             tinygl_text(buffer);
         } 
-        else if(choice == 'P') {
-            buffer[0] = choice;
-            buffer[1] = '\0';
-            tinygl_text(buffer);
-        } 
-        else if(choice == 'N') {
-            buffer[0] = choice;
+        else if(playerChoice == 'N') {
+            buffer[0] = playerChoice;
             buffer[1] = '\0';
             tinygl_text(buffer);
         }
-        else if(choice == 'Z') {  
-            buffer[0] = choice;
+        else if(playerChoice == 'Z') {  
+            buffer[0] = playerChoice;
             buffer[1] = '\0';
             tinygl_text(buffer);
-        }
-        
-        choice = navswitch_moved();
-        
+        }*/
         
         if(button_push_event_p (BUTTON1)){
-            return choice;
+            break;
         }
     }
 }

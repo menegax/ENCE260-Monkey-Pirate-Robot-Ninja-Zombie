@@ -29,22 +29,22 @@ void display_column (uint8_t row_pattern, uint8_t current_column)
 }
 
 /**Used to limit cursor movement*/
-char navswitch_moved (void)
+void navswitch_moved (void)
 {
     if (navswitch_push_event_p (NAVSWITCH_NORTH)) {
-        return 'M';
+        playerChoice = 'M';
     }
     if (navswitch_push_event_p (NAVSWITCH_SOUTH)) {
-        return 'R';
+        playerChoice = 'R';
     }
     if (navswitch_push_event_p (NAVSWITCH_EAST)) {
-       return 'N';
+       playerChoice = 'N';
     }
     if (navswitch_push_event_p (NAVSWITCH_WEST)) {
-        return 'P';
+        playerChoice = 'P';
     }
     if (navswitch_push_event_p (NAVSWITCH_PUSH)) {
-        return 'Z';
+        playerChoice = 'Z';
     } 
 }
 

@@ -9,7 +9,7 @@
 void display_column (uint8_t row_pattern, uint8_t current_column);
 
 /**Used to limit cursor movement*/
-char navswitch_moved (void);
+void navswitch_moved (void);
 
 /**Function to display cursor with blinking effect*/
 void display_threeline (void);
