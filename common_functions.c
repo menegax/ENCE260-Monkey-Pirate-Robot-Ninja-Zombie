@@ -29,30 +29,25 @@ void display_column (uint8_t row_pattern, uint8_t current_column)
 }
 
 /**Used to limit cursor movement*/
-void navswitch_moved (uint8_t num)
+char navswitch_moved ()
 {
-    if (navswitch_push_event_p (NAVSWITCH_NORTH) && y_pos > (1 - num)) {
-        navswitch_map[x_pos] = navswitch_map[x_pos] >> 1;
-        y_pos--;
+    if (navswitch_push_event_p (NAVSWITCH_NORTH)) {
+        return 'M';
     }
 
-    if (navswitch_push_event_p (NAVSWITCH_SOUTH) && y_pos < (5 + num)) {
-        navswitch_map[x_pos] = navswitch_map[x_pos] << 1;
-        y_pos++;
+    if (navswitch_push_event_p (NAVSWITCH_SOUTH)) {
+        return 'R';
     }
 
-    if (navswitch_push_event_p (NAVSWITCH_EAST) && x_pos < 4) {
-        prev_pos_x = navswitch_map[x_pos];
-        navswitch_map[x_pos] &= 0;
-        x_pos++;
-        navswitch_map[x_pos] = prev_pos_x;
+    if (navswitch_push_event_p (NAVSWITCH_EAST)) {
+       return 'N';
     }
 
-    if (navswitch_push_event_p (NAVSWITCH_WEST) && x_pos > 0) {
-        prev_pos_x = navswitch_map[x_pos];
-        navswitch_map[x_pos] &= 0;
-        x_pos--;
-        navswitch_map[x_pos] = prev_pos_x;
+    if (navswitch_push_event_p (NAVSWITCH_WEST)) {
+        return 'P';
+    }
+    if (navswitch_push_event_p (NAVSWITCH_PUSH)) {
+        return 'Z';
     }
 }
 

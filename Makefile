@@ -16,7 +16,7 @@ all: game.out
 
 
 # Compile: create object files from C source files.
-game.o: game.c init.h setup.h constants.h common_functions.h
+game.o: game.c init.h setup.h character.h constants.h common_functions.h
 	$(CC) -c $(CFLAGS) $< -o $@
 
 system.o: ../../drivers/avr/system.c ../../drivers/avr/system.h
@@ -66,6 +66,9 @@ button.o: ../../drivers/button.c ../../drivers/avr/pio.h ../../drivers/avr/syste
 
 setup.o: setup.c setup.h constants.h common_functions.h
 	$(CC) -c $(CFLAGS) $< -o $@
+	
+character.o: character.c character.h constants.h common_functions.h
+	$(CC) -c $(CFLAGS) $< -o $@
 
 common_functions.o: common_functions.c common_functions.h constants.h init.h
 	$(CC) -c $(CFLAGS) $< -o $@
@@ -74,7 +77,7 @@ constants.o: constants.c constants.h ../../drivers/avr/pio.h
 	$(CC) -c $(CFLAGS) $< -o $@
 
 # Link: create ELF output file from object files.
-game.out: game.o system.o ir_uart.o navswitch.o pacer.o tinygl.o init.o pio.o timer.o display.o ledmat.o font.o usart1.o timer0.o prescale.o button.o setup.o common_functions.o constants.o
+game.out: game.o system.o ir_uart.o navswitch.o pacer.o tinygl.o init.o pio.o timer.o display.o ledmat.o font.o usart1.o timer0.o prescale.o button.o setup.o common_functions.o constants.o character.o
 	$(CC) $(CFLAGS) $^ -o $@ -lm 
 	$(SIZE) $@
 

@@ -1,12 +1,12 @@
 /**
- * Paper Scissors Rock game 
- * Paper Scissors Rock game 
+ * Paper Scissors Rock game  
  * authors: Joshua Meneghini and Jonathan Hills
  * jam357 and jhi57
  */
 
 #include "init.h"
 #include "setup.h"
+#include "character.h"
 #include "constants.h"
 #include "common_functions.h"
 
@@ -40,8 +40,9 @@ int main (void)
     game_init ();
     
     uint8_t current_column = 0;
+    char choice;
     
-    tinygl_text("Monkey-Pirate-Robot-Ninja-Zombie");
+    tinygl_text("PAPER SCISSORS ROCK");
     
     while (1)
     {
@@ -76,4 +77,8 @@ int main (void)
     
     /*TODO*/
     game_setup ();
+    choice = choose_action();
+    // send(choice);
+    // opponentChoice = receive();
+    // compare(choice, opponentChoice);
 }

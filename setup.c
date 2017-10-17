@@ -49,6 +49,7 @@ void player_setup(void)
             tinygl_text("2");
         }
 
+        /*TO DO - Abstract this */
         if(navswitch_push_event_p (NAVSWITCH_NORTH) || navswitch_push_event_p (NAVSWITCH_SOUTH)) {
             if(playerChoice == 1) {
                 playerChoice = 2;
