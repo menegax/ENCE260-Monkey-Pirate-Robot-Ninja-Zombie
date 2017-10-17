@@ -43,10 +43,6 @@ void game_setup (void)
 {
 
     tinygl_text("CHOOSE PLAYER");
-    navswitch_map[2] = 0b11100;
-    current_column = 0;
-    x_pos = 2;
-    y_pos = 3;
 
     blinker_count = 0;
     while (1) {

@@ -80,6 +80,7 @@ int main (void)
     while (1) {
         if (received == 0) {
             choose_action();
+        }
         while(1){
             tinygl_update();
             if (playerNum == 0 && sent == 0){
@@ -97,17 +98,15 @@ int main (void)
             if (received == 1){
                 win_or_lose(result); 
             }
-            if ((button_push_event_p (BUTTON1)) {
-                char playerChoice = 'M';
-                char opponentChoice = 0;
-                int sent = 0;
-                int received = 0;
-                int result = 0;
+            if (button_push_event_p (BUTTON1)) {
+                playerChoice = 'M';
+                opponentChoice = 0;
+                sent = 0;
+                received = 0;
+                result = 0;
                 break;
             }   
         }
-    
-
-
+    }
     return 0;
 }
