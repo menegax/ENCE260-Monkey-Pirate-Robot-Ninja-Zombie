@@ -70,7 +70,7 @@ setup.o: setup.c setup.h constants.h common_functions.h
 character.o: character.c character.h constants.h common_functions.h
 	$(CC) -c $(CFLAGS) $< -o $@
 
-common_functions.o: common_functions.c common_functions.h constants.h init.h
+common_functions.o: common_functions.c common_functions.h constants.h init.h ../../utils/tinygl.h
 	$(CC) -c $(CFLAGS) $< -o $@
 
 constants.o: constants.c constants.h ../../drivers/avr/pio.h

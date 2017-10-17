@@ -29,26 +29,23 @@ void display_column (uint8_t row_pattern, uint8_t current_column)
 }
 
 /**Used to limit cursor movement*/
-char navswitch_moved ()
+char navswitch_moved (void)
 {
     if (navswitch_push_event_p (NAVSWITCH_NORTH)) {
         return 'M';
     }
-
     if (navswitch_push_event_p (NAVSWITCH_SOUTH)) {
         return 'R';
     }
-
     if (navswitch_push_event_p (NAVSWITCH_EAST)) {
        return 'N';
     }
-
     if (navswitch_push_event_p (NAVSWITCH_WEST)) {
         return 'P';
     }
     if (navswitch_push_event_p (NAVSWITCH_PUSH)) {
         return 'Z';
-    }
+    } 
 }
 
 /**Function to display cursor with blinking effect*/

@@ -8,10 +8,11 @@
 /**Used in move_cursor to define border for cursor*/
 #define NUM 0
 
+/**Assigns each board a player number**/
+void player_setup(void);
+
 /**Planning phase function (Step 1)*/
 void game_setup (void);
 
-/**Assigns each board a player number**/
-void player_setup(void);
 
 #endif

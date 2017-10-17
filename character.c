@@ -14,27 +14,39 @@ char choose_action(void)
     char choice = 'M';
     navswitch_init();
     button_init();
+    tinygl_text_mode_set(TINYGL_TEXT_MODE_STEP);
 
     while(1) {
         pacer_wait();
         navswitch_update();
         tinygl_update();
         button_update();
+        char buffer[2];
 
         if(choice == 'M') {
-            tinygl_text("M");
+            buffer[0] = choice;
+            buffer[1] = '\0';
+            tinygl_text(buffer);
         } 
         else if(choice == 'R') {
-            tinygl_text("R");
+            buffer[0] = choice;
+            buffer[1] = '\0';
+            tinygl_text(buffer);
         } 
         else if(choice == 'P') {
-            tinygl_text("P");
+            buffer[0] = choice;
+            buffer[1] = '\0';
+            tinygl_text(buffer);
         } 
         else if(choice == 'N') {
-            tinygl_text("N");
+            buffer[0] = choice;
+            buffer[1] = '\0';
+            tinygl_text(buffer);
         }
-        else if(choice == 'Z') {
-            tinygl_text("Z");
+        else if(choice == 'Z') {  
+            buffer[0] = choice;
+            buffer[1] = '\0';
+            tinygl_text(buffer);
         }
         
         choice = navswitch_moved();

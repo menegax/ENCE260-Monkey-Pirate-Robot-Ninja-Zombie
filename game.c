@@ -42,7 +42,7 @@ int main (void)
     uint8_t current_column = 0;
     char choice;
     
-    tinygl_text("PAPER SCISSORS ROCK");
+    tinygl_text("Monkey-Pirate-Robot-Ninja-Zombie");
     
     while (1)
     {
@@ -81,4 +81,5 @@ int main (void)
     // send(choice);
     // opponentChoice = receive();
     // compare(choice, opponentChoice);
+    return 0;
 }
