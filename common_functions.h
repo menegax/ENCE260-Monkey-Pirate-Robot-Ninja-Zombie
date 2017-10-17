@@ -26,6 +26,9 @@ void display_emptymap (void);
 /**Compares the two options to decide on a winner and displays winner**/
 void compare(char playerChoice, char opponentChoice);
 
+/**Determines winner of the game**/
+void win_or_lose(int outcome) ;
+
 /**Returns if the board is player 1 or 2**/
 int getPlayer(void);
 

@@ -83,7 +83,7 @@ void display_emptymap (void)
 }
 
 /**Compares the two options to decide on a winner and displays winner**/
-int compare(char playerChoice, char opponentChoice)
+void compare(char playerChoice, char opponentChoice)
 {
     tinygl_text_mode_set(TINYGL_TEXT_MODE_SCROLL);
     if (playerChoice == opponentChoice) {
@@ -103,6 +103,20 @@ int compare(char playerChoice, char opponentChoice)
     }
     //Could expand this to return a 1 for a win or 0 otherwise and display a count of all wins
 }
+
+void win_or_lose(int outcome) 
+{
+    tinygl_text_mode_set(TINYGL_TEXT_MODE_SCROLL);
+    if (outcome == 6) {
+        tinygl_text("YOU WON!");
+    }
+    else if (outcome == 8) {
+        tinygl_text("YOU LOST!");
+    }
+    else {
+        tinygl_text("YOU DREW!");
+    }
+} 
 
 /**Returns if the board is player 1 or 2**/
 int getPlayer(void)

@@ -8,7 +8,7 @@
 
 void send_choice (void)
 {
-    if (getPlayer == 0) {
+    if (playerNum == 0) {
         if (playerChoice == 'M') {
             ir_uart_putc(1);
         }

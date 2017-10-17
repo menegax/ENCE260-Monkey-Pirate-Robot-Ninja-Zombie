@@ -81,15 +81,17 @@ int main (void)
     if (playerNum == 0){
         send_choice();  
     } 
-   // if (playerNum == 1) {
-   //     receive_option();
-  //  }
+    if (playerNum == 1) {
+        receive_option();
+    }
     if (playerNum == 1){
         send_choice();
     } 
-    //if (playerNum == 0) {
-   //     receive_option();
-   // }
+    if (playerNum == 0) {
+        receive_option();
+    }
+    
+    win_or_lose(result);
 
     return 0;
 }
