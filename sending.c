@@ -19,7 +19,7 @@ void send_choice (void)
         } else if (result == 'L') {
             ir_uart_putc(87);
         } else {
-            ir_uart_putc('D');
+            ir_uart_putc(68);
         }
     }
 }

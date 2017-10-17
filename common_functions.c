@@ -109,17 +109,14 @@ void compare(char playerChoice, char opponentChoice)
 void win_or_lose(int outcome) 
 {
     tinygl_text_mode_set(TINYGL_TEXT_MODE_STEP);
-    if (outcome == 87 || outcome == 6) {
+    if (outcome == 87) {
         tinygl_text("W");
     }
-    else if (outcome == 76 || outcome == 8) {
+    else if (outcome == 76) {
         tinygl_text("L");
     }
-    else {
-        char buffer[2];
-        buffer[0] = outcome;
-        buffer[1] = '\0';
-        tinygl_text(buffer);
+    else if (outcome == 68) {
+        tinygl_text("D");
     }
 } 
 

@@ -77,26 +77,35 @@ int main (void)
     }
   
     game_setup ();
-    choose_action();
-    while(1){
-        tinygl_update();
-        if (playerNum == 0 && sent == 0;){
-            send_choice();  
-        } 
-        if (playerNum == 1 && received == 0) {
-            receive_option();
+    while (1) {
+        if (received == 0) {
+            choose_action();
+        while(1){
+            tinygl_update();
+            if (playerNum == 0 && sent == 0){
+                send_choice();  
+            } 
+            if (playerNum == 1 && received == 0) {
+                receive_option();
+            }
+            if (playerNum == 1 && received == 1){
+                send_choice();
+            } 
+            if (playerNum == 0) {
+                receive_option();
+            }
+            if (received == 1){
+                win_or_lose(result); 
+            }
+            if ((button_push_event_p (BUTTON1)) {
+                char playerChoice = 'M';
+                char opponentChoice = 0;
+                int sent = 0;
+                int received = 0;
+                int result = 0;
+                break;
+            }   
         }
-        if (playerNum == 1 && received == 1){
-            send_choice();
-        } 
-        if (playerNum == 0) {
-            receive_option();
-        }
-        if (received == 1){
-            win_or_lose(result); 
-        }
-        // Reset shit here
-    }
     
 
 
