@@ -11,6 +11,7 @@
 #include "common_functions.h"
 #include "sending.h"
 #include "receiver.h"
+#include <stdio.h>
 
 static int previous_col;
 
@@ -77,12 +78,17 @@ int main (void)
   
     game_setup ();
     choose_action();
+    char buffer[2];
     while(1){
+        tinygl_update();
         if (playerNum == 0){
         send_choice();  
         } 
         if (playerNum == 1) {
             receive_option();
+            buffer[0] = opponentChoice;
+            buffer[1] = '\0';
+            tinygl_text(buffer);
         }
         if (playerNum == 1 && received == 1){
             send_choice();
