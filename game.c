@@ -77,8 +77,18 @@ int main (void)
     /*TODO*/
     game_setup ();
     choose_action();
-    send_choice();
-    // opponentChoice = receive();
-    // compare(choice, opponentChoice);
+    if (getPlayer == 0){
+        send_choice()
+    } 
+    if (getPlayer == 1) {
+        receive_option();
+    }
+    if (getPlayer == 1){
+        send_choice()
+    } 
+    if (getPlayer == 0) {
+        receive_option();
+    }
+
     return 0;
 }
