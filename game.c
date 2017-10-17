@@ -9,6 +9,7 @@
 #include "character.h"
 #include "constants.h"
 #include "common_functions.h"
+#include "sending.h"
 
 static int previous_col;
 
@@ -76,7 +77,7 @@ int main (void)
     /*TODO*/
     game_setup ();
     choose_action();
-    // send(choice);
+    send_choice();
     // opponentChoice = receive();
     // compare(choice, opponentChoice);
     return 0;

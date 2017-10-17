@@ -83,24 +83,23 @@ void display_emptymap (void)
 }
 
 /**Compares the two options to decide on a winner and displays winner**/
-void compare(char playerChoice, char opponentChoice)
+int compare(char playerChoice, char opponentChoice)
 {
     tinygl_text_mode_set(TINYGL_TEXT_MODE_SCROLL);
-    
     if (playerChoice == opponentChoice) {
-        tinygl_text("DRAW");
+        result = 7;
     } else if ((playerChoice == 'M' && opponentChoice == 'N') || (playerChoice == 'M' && opponentChoice == 'R')) {
-        tinygl_text("YOU WIN!");
+        result = 6;
     } else if ((playerChoice == 'R' && opponentChoice == 'N') || (playerChoice == 'R' && opponentChoice == 'Z')) {
-        tinygl_text("YOU WIN!");
+        result = 6;
     } else if ((playerChoice == 'P' && opponentChoice == 'R') || (playerChoice == 'P' && opponentChoice == 'M')) {
-        tinygl_text("YOU WIN!");
+        result = 6;
     } else if ((playerChoice == 'N' && opponentChoice == 'P') || (playerChoice == 'N' && opponentChoice == 'Z')) {
-        tinygl_text("YOU WIN!");
+        result = 6;
     } else if ((playerChoice == 'Z' && opponentChoice == 'P') || (playerChoice == 'Z' && opponentChoice == 'M')) {
-        tinygl_text("YOU WIN!");
+        result = 6;
     } else {
-        tinygl_text("YOU LOSE!");
+        result = 8;
     }
     //Could expand this to return a 1 for a win or 0 otherwise and display a count of all wins
 }
