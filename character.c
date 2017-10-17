@@ -27,32 +27,6 @@ void choose_action(void)
         buffer[1] = '\0';
         tinygl_text(buffer);
         navswitch_moved();
-        
-/*
-        if(playerChoice == 'M') {
-
-        } 
-        else if(playerChoice == 'R') {
-            buffer[0] = playerChoice;
-            buffer[1] = '\0';
-            tinygl_text(buffer);
-        } 
-        else if(playerChoice == 'P') {
-            buffer[0] = playerChoice;
-            buffer[1] = '\0';
-            tinygl_text(buffer);
-        } 
-        else if(playerChoice == 'N') {
-            buffer[0] = playerChoice;
-            buffer[1] = '\0';
-            tinygl_text(buffer);
-        }
-        else if(playerChoice == 'Z') {  
-            buffer[0] = playerChoice;
-            buffer[1] = '\0';
-            tinygl_text(buffer);
-        }*/
-        
         if(button_push_event_p (BUTTON1)){
             break;
         }
