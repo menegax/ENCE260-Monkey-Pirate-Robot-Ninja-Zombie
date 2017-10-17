@@ -43,6 +43,26 @@ assignment/team312/sending.h
 assignment/team312/setup.c
 assignment/team312/setup.h
 
+//Who wins and who loses:
+Monkey
+* Monkey fools Ninja
+* Monkey unplugs Robot
+
+Robot
+* Robot chokes Ninja
+* Robot crushes Zombie
+
+Pirate
+* Pirate drowns Robot
+* Pirate skewers Monkey
+
+Ninja
+* Ninja karate chops Pirate
+* Ninja decapitates Zombie
+
+Zombie
+* Zombie eats Pirate
+* Zombie savages Monkey
 
 //Git Instuctions
 Use this directory for your final game and its module(s).  Only the
