@@ -15,6 +15,7 @@ int playerNum;
 char playerChoice;
 char opponentChoice;
 int received;
+int sent;
 int result;
 
 uint8_t shipmap[5];

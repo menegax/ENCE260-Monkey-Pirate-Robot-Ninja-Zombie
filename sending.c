@@ -9,21 +9,8 @@
 void send_choice (void)
 {
     if (playerNum == 0) {
-        if (playerChoice == 'M') {
-            ir_uart_putc('M');
-        }
-        else if (playerChoice  == 'R') {
-            ir_uart_putc('R');
-        }
-        else if (playerChoice  == 'P') {
-            ir_uart_putc('P');
-        }
-        else if (playerChoice  == 'N') {
-            ir_uart_putc('N');
-        }
-        else if (playerChoice  == 'Z') {
-            ir_uart_putc('Z');
-        }
+        ir_uart_putc(playerChoice);
+        sent = 1;
     }
     else {
         compare(playerChoice, opponentChoice);

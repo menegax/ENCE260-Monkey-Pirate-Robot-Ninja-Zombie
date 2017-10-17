@@ -17,6 +17,7 @@ uint16_t ships = 0;
 int playerNum = 0;
 char playerChoice = 'M';
 char opponentChoice = 0;
+int sent = 0;
 int received = 0;
 int result = 0;
 

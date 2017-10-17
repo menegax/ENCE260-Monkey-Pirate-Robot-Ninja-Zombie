@@ -17,6 +17,7 @@ void receive_option(void)
             result = ir_uart_getc();
             if (result != 0) {
                 received = 1;
+                sent = 1;
             }
         }
     }

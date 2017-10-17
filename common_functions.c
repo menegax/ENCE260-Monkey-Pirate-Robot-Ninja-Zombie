@@ -86,20 +86,22 @@ void display_emptymap (void)
 void compare(char playerChoice, char opponentChoice)
 {
     tinygl_text_mode_set(TINYGL_TEXT_MODE_SCROLL);
-    if (playerChoice == opponentChoice) {
-        result = 'D';
-    } else if ((playerChoice == 'M' && opponentChoice == 'N') || (playerChoice == 'M' && opponentChoice == 'R')) {
-        result = 'W';
-    } else if ((playerChoice == 'R' && opponentChoice == 'N') || (playerChoice == 'R' && opponentChoice == 'Z')) {
-        result = 'W';
-    } else if ((playerChoice == 'P' && opponentChoice == 'R') || (playerChoice == 'P' && opponentChoice == 'M')) {
-        result = 'W';
-    } else if ((playerChoice == 'N' && opponentChoice == 'P') || (playerChoice == 'N' && opponentChoice == 'Z')) {
-        result = 'W';
-    } else if ((playerChoice == 'Z' && opponentChoice == 'P') || (playerChoice == 'Z' && opponentChoice == 'M')) {
-        result = 'W';
-    } else {
-        result = 'L';
+    if (opponentChoice == 'M' || opponentChoice == 'N' ||opponentChoice == 'R' || opponentChoice == 'Z' || opponentChoice == 'P'){
+        if (playerChoice == opponentChoice) {
+            result = 'D';
+        } else if ((playerChoice == 'M' && opponentChoice == 'N') || (playerChoice == 'M' && opponentChoice == 'R')) {
+            result = 'W';
+        } else if ((playerChoice == 'R' && opponentChoice == 'N') || (playerChoice == 'R' && opponentChoice == 'Z')) {
+            result = 'W';
+        } else if ((playerChoice == 'P' && opponentChoice == 'R') || (playerChoice == 'P' && opponentChoice == 'M')) {
+            result = 'W';
+        } else if ((playerChoice == 'N' && opponentChoice == 'P') || (playerChoice == 'N' && opponentChoice == 'Z')) {
+            result = 'W';
+        } else if ((playerChoice == 'Z' && opponentChoice == 'P') || (playerChoice == 'Z' && opponentChoice == 'M')) {
+            result = 'W';
+        } else {
+            result = 'L';
+        }
     }
     //Could expand this to return a 1 for a win or 0 otherwise and display a count of all wins
 }
@@ -114,12 +116,11 @@ void win_or_lose(int outcome)
         tinygl_text("L");
     }
     else {
-        tinygl_text("D");
-    }/*
-    char buffer[2];
-    buffer[0] = outcome;
-    buffer[1] = '\0';
-    tinygl_text(buffer);*/
+        char buffer[2];
+        buffer[0] = outcome;
+        buffer[1] = '\0';
+        tinygl_text(buffer);
+    }
 } 
 
 /**Returns if the board is player 1 or 2**/

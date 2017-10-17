@@ -78,13 +78,12 @@ int main (void)
   
     game_setup ();
     choose_action();
-    char buffer[2];
     while(1){
         tinygl_update();
-        if (playerNum == 0){
+        if (playerNum == 0 && sent == 0;){
             send_choice();  
         } 
-        if (playerNum == 1) {
+        if (playerNum == 1 && received == 0) {
             receive_option();
         }
         if (playerNum == 1 && received == 1){
