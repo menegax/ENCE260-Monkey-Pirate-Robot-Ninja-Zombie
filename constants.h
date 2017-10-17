@@ -13,6 +13,7 @@ uint16_t blinker_count;
 uint16_t ships;
 int playerNum;
 char playerChoice;
+char opponentChoice;
 
 uint8_t shipmap[5];
 
