@@ -1,3 +1,10 @@
+/**
+ * Monkey-Pirate-Robot-Ninja-Zombie game
+ * character.h
+ * Authors: Joshua Meneghini and Jonathan Hills
+ * jam357 and jhi57
+ */
+
 #ifndef CHARACTER_H
 #define CHARACTER_H
 

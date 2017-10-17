@@ -1,3 +1,10 @@
+/**
+ * Monkey-Pirate-Robot-Ninja-Zombie game
+ * constants.h
+ * Authors: Joshua Meneghini and Jonathan Hills
+ * jam357 and jhi57
+ */
+
 #ifndef GAME_H
 #define GAME_H
 

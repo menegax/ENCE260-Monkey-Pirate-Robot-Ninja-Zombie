@@ -1,6 +1,8 @@
-/* 
- * sending the character chosen to the opponent's board
+/**
+ * Monkey-Pirate-Robot-Ninja-Zombie game
+ * sending.c
  * Authors: Joshua Meneghini and Jonathan Hills
+ * jam357 and jhi57
  */
 
 #include "constants.h"

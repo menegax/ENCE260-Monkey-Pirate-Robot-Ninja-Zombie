@@ -1,3 +1,10 @@
+/**
+ * Monkey-Pirate-Robot-Ninja-Zombie game
+ * common_functions.h
+ * Authors: Joshua Meneghini and Jonathan Hills
+ * jam357 and jhi57
+ */
+
 #ifndef COMMON_FUNCTIONS_H
 #define COMMON_FUNCTIONS_H
 

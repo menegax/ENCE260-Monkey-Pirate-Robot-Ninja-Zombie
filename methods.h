@@ -1,3 +1,9 @@
+/**
+ * Monkey-Pirate-Robot-Ninja-Zombie game
+ * methods.h
+ * Authors: Joshua Meneghini and Jonathan Hills
+ * jam357 and jhi57
+ */
 
 #ifndef HELPER_H
 #define HELPER_H

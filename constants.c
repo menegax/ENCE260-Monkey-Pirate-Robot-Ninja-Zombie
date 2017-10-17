@@ -1,7 +1,8 @@
 /**
- * All constants required for the program
- * 
- * Authors: Jono Hills and Josh Meneghini
+ * Monkey-Pirate-Robot-Ninja-Zombie game
+ * constants.c
+ * Authors: Joshua Meneghini and Jonathan Hills
+ * jam357 and jhi57
  */
 
 #include "pio.h"

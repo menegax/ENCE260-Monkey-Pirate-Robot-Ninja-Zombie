@@ -1,6 +1,7 @@
 /**
- * Paper Scissors Rock game  
- * authors: Joshua Meneghini and Jonathan Hills
+ * Monkey-Pirate-Robot-Ninja-Zombie game
+ * game.c
+ * Authors: Joshua Meneghini and Jonathan Hills
  * jam357 and jhi57
  */
 

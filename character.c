@@ -1,6 +1,9 @@
 /**
- * Chooses, displays and returns a character to send.
- **/
+ * Monkey-Pirate-Robot-Ninja-Zombie game
+ * character.c
+ * Authors: Joshua Meneghini and Jonathan Hills
+ * jam357 and jhi57
+ */
 
 
 #include "constants.h"

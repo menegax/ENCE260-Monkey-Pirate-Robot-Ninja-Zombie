@@ -1,3 +1,10 @@
+/**
+ * Monkey-Pirate-Robot-Ninja-Zombie game
+ * sending.h
+ * Authors: Joshua Meneghini and Jonathan Hills
+ * jam357 and jhi57
+ */
+
 #ifndef SENDING_H
 #define SENDING_H
 

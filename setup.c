@@ -1,3 +1,10 @@
+/**
+ * Monkey-Pirate-Robot-Ninja-Zombie game
+ * setup.c
+ * Authors: Joshua Meneghini and Jonathan Hills
+ * jam357 and jhi57
+ */
+
 #include "constants.h"
 #include "common_functions.h"
 

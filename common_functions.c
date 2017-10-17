@@ -1,7 +1,9 @@
-/*
-common functions
-created by Joshua Meneghini and Jonathan Hills
-*/
+/**
+ * Monkey-Pirate-Robot-Ninja-Zombie game
+ * common_functions.c
+ * Authors: Joshua Meneghini and Jonathan Hills
+ * jam357 and jhi57
+ */
 
 #include "constants.h"
 #include "init.h"

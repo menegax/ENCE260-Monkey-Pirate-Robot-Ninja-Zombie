@@ -1,8 +1,8 @@
 /**
- * All helper methods required by the various parts of the program.
- * 
- * Authors: Jono Hills and Josh Meneghini
- * 
+ * Monkey-Pirate-Robot-Ninja-Zombie game
+ * methods.c
+ * Authors: Joshua Meneghini and Jonathan Hills
+ * jam357 and jhi57
  */
 
 #include "constants.h"

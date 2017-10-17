@@ -1,3 +1,50 @@
+//Monkey-Pirate-Robot-Ninja-Zombie
+//Authors: Joshua Meneghini and Jonathan Hills
+//jam357 and jhi57
+
+//Dependencies:
+system.h
+
+drivers/navswitch.h
+drivers/button.h
+drivers/display.h
+
+utils/tiny_gl.h
+utils/pacer.h
+
+fonts/font.h
+
+drivers/avr/ir_uart.h
+drivers/avr/timer.h
+drivers/avr/prescale.h
+
+//Installation
+Connect USB-Mini to computer and UCFK4
+Open Terminal and type "make" in the game file directory
+Followed by the command "make  program" in the game file directory
+
+//Game Files
+assignment/team312/character.c
+assignment/team312/character.h
+assignment/team312/common_functions.c
+assignment/team312/common_functions.h
+assignment/team312/constants.c
+assignment/team312/constants.h
+assignment/team312/game.c
+assignment/team312/init.c
+assignment/team312/init.h
+assignment/team312/Makefile
+assignment/team312/methods.c
+assignment/team312/methods.h
+assignment/team312/receiver.c
+assignment/team312/receiver.h
+assignment/team312/sending.c
+assignment/team312/sending.h
+assignment/team312/setup.c
+assignment/team312/setup.h
+
+
+//Git Instuctions
 Use this directory for your final game and its module(s).  Only the
 files in this directory will be marked.
 
@@ -13,4 +60,3 @@ git commit -m "Added file" module.c
 The use the git push command to copy the changes to the remote git server
 
 git push
-
