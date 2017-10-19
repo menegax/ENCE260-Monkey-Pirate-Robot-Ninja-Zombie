@@ -11,7 +11,7 @@
 /**Determines which option the player chooses from M, R, Z, P and N**/
 void choose_action(void)
 {
-    navswitch_init();
+    navswitch_init();   
     button_init();
     tinygl_text_mode_set(TINYGL_TEXT_MODE_STEP);
     char buffer[2]; 

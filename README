@@ -43,6 +43,17 @@ assignment/team312/sending.h
 assignment/team312/setup.c
 assignment/team312/setup.h
 
+//Instructions
+Monkey-Robtot-Pirate-Ninja-Zombie is a fun variant of paper scissors rock.
+On initilisation a smiley face will be on the LED matrix. Pressing the button
+will move to the title screen, and pressing the button again will allow
+you to choose a player. There cannot be two player 1s or the IR transfer
+will not work! Pressing the navstick will choose your player. Then the four navstick
+directions as well as the navstick push controls which action to throw, this is 
+sent to the other controller when you press the button. Once the W/L/D is 
+displayed, pressing the button again takes the game back to the choose action
+phase.
+
 //Who wins and who loses:
 Monkey
 * Monkey fools Ninja
