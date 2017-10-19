@@ -63,10 +63,10 @@ int main (void)
     /**Enter the game setup phase to choose player numbers**/
     game_setup ();
     
-    /**The game phase
+    /**The game phase**/
     while (1) {
         if (received == 0) {
-            //Choose the character option to play with**/
+            /**Choose the character option to play with**/
             choose_action();
         }
         
