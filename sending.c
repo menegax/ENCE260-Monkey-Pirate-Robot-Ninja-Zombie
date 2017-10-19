@@ -18,11 +18,11 @@ void send_choice (void)
     } else {
         compare(playerChoice, opponentChoice);
         if (result == 'W') {
-            ir_uart_putc(76);
+            ir_uart_putc(LOSE);
         } else if (result == 'L') {
-            ir_uart_putc(87);
+            ir_uart_putc(WIN);
         } else {
-            ir_uart_putc(68);
+            ir_uart_putc(DRAW);
         }
     }
 }

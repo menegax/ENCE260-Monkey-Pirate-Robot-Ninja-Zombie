@@ -8,8 +8,6 @@
 #include "constants.h"
 #include "common_functions.h"
 
-#define NUM 0
-
 /**Assigns each board a player number**/
 void player_setup(void) 
 {

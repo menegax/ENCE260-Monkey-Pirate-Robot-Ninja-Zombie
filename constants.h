@@ -10,6 +10,13 @@
 
 #include "pio.h"
 
+/** 
+ * The three differenct ASCII characters for W L and D.
+ */
+#define WIN 87
+#define LOSE 76
+#define DRAW 68
+
 uint16_t blinker_count;
 /**player number 0 for p2 and 1 for p1**/
 int playerNum;

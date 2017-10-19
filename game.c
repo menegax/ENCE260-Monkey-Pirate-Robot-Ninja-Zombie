@@ -12,7 +12,6 @@
 #include "common_functions.h"
 #include "sending.h"
 #include "receiver.h"
-#include <stdio.h>
 
 static const uint8_t bitmap[] =
 {
