@@ -57,7 +57,7 @@ void game_setup (void)
         button_update ();
         navswitch_update ();
         tinygl_update();
-        //Once chosen, assign the board a number and go back to game
+        /**Once chosen, assign the board a number and go back to game**/
         if (button_push_event_p (BUTTON1)) {
             tinygl_clear ();
             player_setup();
