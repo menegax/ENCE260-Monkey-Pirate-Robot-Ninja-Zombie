@@ -11,7 +11,6 @@
 #include "constants.h"
 #include "common_functions.h"
 
-
 /**Used in move_cursor to define border for cursor*/
 #define NUM 0
 
@@ -20,6 +19,5 @@ void player_setup(void);
 
 /**Planning phase function (Step 1)*/
 void game_setup (void);
-
 
 #endif

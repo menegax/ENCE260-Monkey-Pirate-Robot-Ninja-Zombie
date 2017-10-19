@@ -11,6 +11,7 @@
 /**Reads input from the opposite board. **/
 void receive_option(void)
 {   
+    //Player 1 receives player 2's choice else, player 2 receives game result
     if (playerNum == 1) {
         //The opponents choice
         if (ir_uart_read_ready_p ()) {

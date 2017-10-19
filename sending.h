@@ -11,7 +11,7 @@
 #include "constants.h"
 #include "common_functions.h"
 
-/**send player2 choice and winner from player 1 board*/
+/**Sends input to the opposite board. **/
 void send_choice (void);
 
 #endif

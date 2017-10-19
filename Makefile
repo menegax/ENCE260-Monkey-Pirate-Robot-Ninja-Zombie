@@ -10,10 +10,8 @@ OBJCOPY = avr-objcopy
 SIZE = avr-size
 DEL = rm
 
-
 # Default target.
 all: game.out
-
 
 # Compile: create object files from C source files.
 game.o: game.c init.h setup.h character.h constants.h common_functions.h sending.h receiver.h
@@ -87,12 +85,10 @@ game.out: game.o system.o ir_uart.o navswitch.o pacer.o tinygl.o init.o pio.o ti
 	$(CC) $(CFLAGS) $^ -o $@ -lm 
 	$(SIZE) $@
 
-
 # Target: clean project.
 .PHONY: clean
 clean: 
 	-$(DEL) *.o *.out *.hex
-
 
 # Target: program project.
 .PHONY: program

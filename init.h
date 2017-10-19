@@ -19,7 +19,9 @@
 #define PACER_RATE 500
 #define MESSAGE_RATE 20
 
-/**Function to initialise modules*/
+/**
+ * Initialising modules; navswitch, pacer, ir_uart, button, led's, tinygl etc
+ **/
 void game_init(void);
 
 #endif

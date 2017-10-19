@@ -12,34 +12,36 @@
 #include "init.h"
 #include "tinygl.h"
 
-/**Used to display bitmap*/
-void display_column (uint8_t row_pattern, uint8_t current_column);
-
-/**Used to limit cursor movement*/
+/**
+ * Used to limit cursor movement and update the plauerChoice character
+ * that is displayed
+ */
 void navswitch_moved (void);
 
-/**Function to display cursor with blinking effect*/
-void display_threeline (void);
-
-/**Set current column for display_column*/
-void upd_column (void);
-
-/**Function to display ship map*/
-void display_shipmap (void);
-
-/**Function to display empty map*/
-void display_emptymap (void);
-
-/**Compares the two options to decide on a winner and displays winner**/
+/**
+ * Compares the two options to decide on a winner and updates the result
+ * variable from constants to pass to the opponent's board
+ **/
 void compare(char playerChoice, char opponentChoice);
 
-/**Determines winner of the game**/
+/**
+ * Display the characters W, D or L for the win, loss or draw
+ **/
 void win_or_lose(int outcome) ;
 
-/**Returns if the board is player 1 or 2**/
+/**
+ * Returns if the board is player 1 or 2
+ **/
 int getPlayer(void);
 
-/**Sets a board to be player 1**/
+/**
+ * Sets a board to be player 1
+ **/
 void setPlayer(void);
+
+/**
+ * Displays the bitmap smiley face at the beginning of the game
+ **/
+void display_column (uint8_t row_pattern, uint8_t current_column);
 
 #endif

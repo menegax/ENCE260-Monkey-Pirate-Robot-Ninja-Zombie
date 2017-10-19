@@ -10,14 +10,17 @@
 #include "tinygl.h"
 #include "tinygl.h"
 
-/**Used to limit cursor movement*/
+/**
+ * Used to limit cursor movement and update the plauerChoice character
+ * that is displayed
+ */
 void navswitch_moved (void)
 {
     if (navswitch_push_event_p (NAVSWITCH_NORTH)) {
-        playerChoice = 'M';
+        playerChoice = 'M'; 
     }
     if (navswitch_push_event_p (NAVSWITCH_SOUTH)) {
-        playerChoice = 'R';
+        playerChoice = 'R'; 
     }
     if (navswitch_push_event_p (NAVSWITCH_EAST)) {
        playerChoice = 'N';
@@ -30,7 +33,10 @@ void navswitch_moved (void)
     } 
 }
 
-/**Compares the two options to decide on a winner and displays winner**/
+/**
+ * Compares the two options to decide on a winner and updates the result
+ * variable from constants to pass to the opponent's board
+ **/
 void compare(char playerChoice, char opponentChoice)
 {
     tinygl_text_mode_set(TINYGL_TEXT_MODE_SCROLL);
@@ -51,24 +57,26 @@ void compare(char playerChoice, char opponentChoice)
             result = 'L';
         }
     }
-    //Could expand this to return a 1 for a win or 0 otherwise and display a count of all wins
 }
 
+/**
+ * Display the characters W, D or L for the win, loss or draw
+ **/
 void win_or_lose(int outcome) 
 {
     tinygl_text_mode_set(TINYGL_TEXT_MODE_STEP);
     if (outcome == 87) {
         tinygl_text("W");
-    }
-    else if (outcome == 76) {
+    } else if (outcome == 76) {
         tinygl_text("L");
-    }
-    else if (outcome == 68) {
+    } else if (outcome == 68) {
         tinygl_text("D");
     }
 } 
 
-/**Returns if the board is player 1 or 2**/
+/**
+ * Returns if the board is player 1 or 2
+ **/
 int getPlayer(void)
 {
     if (playerNum == 1) {
@@ -78,8 +86,30 @@ int getPlayer(void)
     }
 }
 
-/**Sets a board to be player 1**/
+/**
+ * Sets a board to be player 1
+ **/
 void setPlayer(void)
 {
     playerNum = 1;
+}
+
+/**
+ * Displays the bitmap smiley face at the beginning of the game
+ **/
+void display_column (uint8_t row_pattern, uint8_t current_column)
+{
+    pio_output_high(cols[previous_col]);
+    int current_row;
+    
+    for (current_row = 0; current_row < 7; current_row++)
+    {
+        if ((row_pattern >> current_row) & 1) {
+            pio_output_low(rows[current_row]);
+        } else {
+            pio_output_high(rows[current_row]);
+        }
+    }
+    
+    pio_output_low(cols[current_column]);
 }

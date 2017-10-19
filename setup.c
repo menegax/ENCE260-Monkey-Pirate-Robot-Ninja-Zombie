@@ -10,11 +10,9 @@
 
 #define NUM 0
 
-
 /**Assigns each board a player number**/
 void player_setup(void) 
 {
-    
     int playerChoice = 1;
     blinker_count = 0;
     
@@ -30,7 +28,6 @@ void player_setup(void)
             tinygl_text("2");
         }
 
-        /*TO DO - Abstract this */
         if(navswitch_push_event_p (NAVSWITCH_NORTH) || navswitch_push_event_p (NAVSWITCH_SOUTH)) {
             if(playerChoice == 1) {
                 playerChoice = 2;
@@ -46,19 +43,21 @@ void player_setup(void)
     }
 }
 
+
+/**
+ * Planning phase function (Step 1)
+ **/
 void game_setup (void)
 {
-
     tinygl_text("CHOOSE PLAYER");
-
     blinker_count = 0;
+    
     while (1) {
         pacer_wait();
         button_update ();
         navswitch_update ();
         tinygl_update();
-
-
+        //Once chosen, assign the board a number and go back to game
         if (button_push_event_p (BUTTON1)) {
             tinygl_clear ();
             player_setup();

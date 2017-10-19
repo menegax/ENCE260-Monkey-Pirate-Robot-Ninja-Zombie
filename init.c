@@ -17,6 +17,9 @@
 #define LOOP_RATE 500
 #define MESSAGE_RATE 20
 
+/**
+ * Initialising modules; navswitch, pacer, ir_uart, button, led's, tinygl etc
+ **/
 void game_init(void)
 {
     system_init ();

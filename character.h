@@ -11,8 +11,7 @@
 #include "constants.h"
 #include "common_functions.h"
 
-/**Determines which option the player chooses**/
+/**Determines which option the player chooses from M, R, Z, P and N**/
 char choose_action(void);
-
 
 #endif

@@ -14,92 +14,86 @@
 #include "receiver.h"
 #include <stdio.h>
 
-static int previous_col;
-
 static const uint8_t bitmap[] =
 {
     0x30, 0x46, 0x40, 0x46, 0x30
 };
 
-static void display_column1 (uint8_t row_pattern, uint8_t current_column)
-{
-    pio_output_high(cols[previous_col]);
-    int current_row;
-    for (current_row = 0; current_row < 7; current_row++)
-    {
-        if ((row_pattern >> current_row) & 1)
-        {
-            pio_output_low(rows[current_row]);
-        }
-        else
-        {
-            pio_output_high(rows[current_row]);
-        }
-    }
-    pio_output_low(cols[current_column]);
-}
-
 int main (void)
 {
+    //Initialises the game
     game_init ();
-    
-    uint8_t current_column = 0;    
-    tinygl_text("Monkey-Pirate-Robot-Ninja-Zombie");
+    uint8_t current_column = 0;
     
     while (1)
     {
         button_update ();
         pacer_wait ();
-        
-        display_column1 (bitmap[current_column], current_column);
+        //Calls the function to display bitmap smiley face in common_functions
+        display_column (bitmap[current_column], current_column);
         previous_col = current_column;
         current_column++;
     
         if (current_column > (LEDMAT_COLS_NUM - 1))
         {
             current_column = 0;
-        }        
+        }
+        //When button is pressed stop displaying the smiley face
         if (button_push_event_p (BUTTON1)) {
             break;
         }   
     }
+    
+    //Displays the game title
+    tinygl_text("Monkey-Pirate-Robot-Ninja-Zombie");
+    
     while (1)
     {
         pacer_wait();
         tinygl_update ();
         navswitch_update ();
         button_update ();
-        
+        //when button is pressed stop displaying the game title
         if (button_push_event_p (BUTTON1)) {
             tinygl_clear ();
             break;
         }
-        
     }
-  
+    
+    //Enter the game setup phase to choose player numbers
     game_setup ();
+    
+    //The game phase
     while (1) {
         if (received == 0) {
+            //Choose the character option to play with
             choose_action();
         }
+        
         while(1){
             button_update();
             tinygl_update();
+            //Player 2 sends their choice to player 1
             if (playerNum == 0 && sent == 0){
                 send_choice();  
             } 
+            //Player 1 receives player 2's choice
             if (playerNum == 1 && received == 0) {
                 receive_option();
             }
+            //Player 1 sends information on whether player 2 won or not
             if (playerNum == 1 && received == 1){
                 send_choice();
             } 
+            //Player 2 receives information on whether they won or not
             if (playerNum == 0) {
                 receive_option();
             }
+            //Once received, display whether each player won or not
             if (received == 1){
                 win_or_lose(result); 
             }
+            //When pressed, reset all variables and start game phase again
             if (button_push_event_p (BUTTON1)) {
                 playerChoice = 'M';
                 opponentChoice = 0;
@@ -110,5 +104,6 @@ int main (void)
             }   
         }
     }
+    
     return 0;
 }
