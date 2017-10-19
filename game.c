@@ -73,19 +73,19 @@ int main (void)
             button_update();
             tinygl_update();
             /**Player 2 sends their choice to player 1**/
-            if (playerNum == 0 && sent == 0){
+            if (player_num == 0 && sent == 0){
                 send_choice();  
             } 
             /**Player 1 receives player 2's choice**/
-            if (playerNum == 1 && received == 0) {
+            if (player_num == 1 && received == 0) {
                 receive_option();
             }
             /**Player 1 sends information on whether player 2 won or not**/
-            if (playerNum == 1 && received == 1){
+            if (player_num == 1 && received == 1){
                 send_choice();
             } 
             /**Player 2 receives information on whether they won or not**/
-            if (playerNum == 0) {
+            if (player_num == 0) {
                 receive_option();
             }
             /**Once received, display whether each player won or not**/
@@ -94,8 +94,8 @@ int main (void)
             }
             /**When pressed, reset all variables and start game phase again**/
             if (button_push_event_p (BUTTON1)) {
-                playerChoice = 'M';
-                opponentChoice = 0;
+                player_choice = 'M';
+                opponent_choice = 0;
                 sent = 0;
                 received = 0;
                 result = 0;

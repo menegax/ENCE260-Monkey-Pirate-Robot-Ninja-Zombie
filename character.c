@@ -22,7 +22,7 @@ void choose_action(void)
         navswitch_update();
         tinygl_update();
         button_update();
-        buffer[0] = playerChoice;
+        buffer[0] = player_choice;
         buffer[1] = '\0';
         tinygl_text(buffer);
         /**when navswitch is moved, the character must update, this function is in common_functions**/

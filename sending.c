@@ -12,11 +12,11 @@
 void send_choice (void)
 {
     /**Player 2 sends their choice to player 1 else, player 1 sends game result**/
-    if (playerNum == 0) {
-        ir_uart_putc(playerChoice);
+    if (player_num == 0) {
+        ir_uart_putc(player_choice);
         sent = 1;
     } else {
-        compare(playerChoice, opponentChoice);
+        compare(player_choice, opponent_choice);
         if (result == 'W') {
             ir_uart_putc(LOSE);
         } else if (result == 'L') {

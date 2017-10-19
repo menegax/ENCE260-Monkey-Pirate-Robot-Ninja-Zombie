@@ -12,11 +12,11 @@
 void receive_option(void)
 {   
     /**Player 1 receives player 2's choice else, player 2 receives game result**/
-    if (playerNum == 1) {
+    if (player_num == 1) {
         /**The opponents choice**/
         if (ir_uart_read_ready_p ()) {
-            opponentChoice = ir_uart_getc ();
-            if (opponentChoice != 0){
+            opponent_choice = ir_uart_getc ();
+            if (opponent_choice != 0){
                 received = 1;
             }
         }

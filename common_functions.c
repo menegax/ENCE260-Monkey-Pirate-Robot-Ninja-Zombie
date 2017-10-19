@@ -17,19 +17,19 @@
 void navswitch_moved (void)
 {
     if (navswitch_push_event_p (NAVSWITCH_NORTH)) {
-        playerChoice = 'M'; 
+        player_choice = 'M'; 
     }
     if (navswitch_push_event_p (NAVSWITCH_SOUTH)) {
-        playerChoice = 'R'; 
+        player_choice = 'R'; 
     }
     if (navswitch_push_event_p (NAVSWITCH_EAST)) {
-       playerChoice = 'N';
+       player_choice = 'N';
     }
     if (navswitch_push_event_p (NAVSWITCH_WEST)) {
-        playerChoice = 'P';
+        player_choice = 'P';
     }
     if (navswitch_push_event_p (NAVSWITCH_PUSH)) {
-        playerChoice = 'Z';
+        player_choice = 'Z';
     } 
 }
 
@@ -37,21 +37,21 @@ void navswitch_moved (void)
  * Compares the two options to decide on a winner and updates the result
  * variable from constants to pass to the opponent's board
  **/
-void compare(char playerChoice, char opponentChoice)
+void compare(char player_choice, char opponent_choice)
 {
     tinygl_text_mode_set(TINYGL_TEXT_MODE_SCROLL);
-    if (opponentChoice == 'M' || opponentChoice == 'N' ||opponentChoice == 'R' || opponentChoice == 'Z' || opponentChoice == 'P'){
-        if (playerChoice == opponentChoice) {
+    if (opponent_choice == 'M' || opponent_choice == 'N' ||opponent_choice == 'R' || opponent_choice == 'Z' || opponent_choice == 'P'){
+        if (player_choice == opponent_choice) {
             result = 'D';
-        } else if ((playerChoice == 'M' && opponentChoice == 'N') || (playerChoice == 'M' && opponentChoice == 'R')) {
+        } else if ((player_choice == 'M' && opponent_choice == 'N') || (player_choice == 'M' && opponent_choice == 'R')) {
             result = 'W';
-        } else if ((playerChoice == 'R' && opponentChoice == 'N') || (playerChoice == 'R' && opponentChoice == 'Z')) {
+        } else if ((player_choice == 'R' && opponent_choice == 'N') || (player_choice == 'R' && opponent_choice == 'Z')) {
             result = 'W';
-        } else if ((playerChoice == 'P' && opponentChoice == 'R') || (playerChoice == 'P' && opponentChoice == 'M')) {
+        } else if ((player_choice == 'P' && opponent_choice == 'R') || (player_choice == 'P' && opponent_choice == 'M')) {
             result = 'W';
-        } else if ((playerChoice == 'N' && opponentChoice == 'P') || (playerChoice == 'N' && opponentChoice == 'Z')) {
+        } else if ((player_choice == 'N' && opponent_choice == 'P') || (player_choice == 'N' && opponent_choice == 'Z')) {
             result = 'W';
-        } else if ((playerChoice == 'Z' && opponentChoice == 'P') || (playerChoice == 'Z' && opponentChoice == 'M')) {
+        } else if ((player_choice == 'Z' && opponent_choice == 'P') || (player_choice == 'Z' && opponent_choice == 'M')) {
             result = 'W';
         } else {
             result = 'L';
@@ -75,23 +75,11 @@ void win_or_lose(int outcome)
 } 
 
 /**
- * Returns if the board is player 1 or 2
- **/
-int getPlayer(void)
-{
-    if (playerNum == 1) {
-        return 1;
-    } else {
-        return 0;
-    }
-}
-
-/**
  * Sets a board to be player 1
  **/
-void setPlayer(void)
+void set_player(void)
 {
-    playerNum = 1;
+    player_num = 1;
 }
 
 /**

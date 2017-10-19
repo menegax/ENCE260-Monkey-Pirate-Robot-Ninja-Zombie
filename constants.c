@@ -16,11 +16,11 @@
 
 uint16_t blinker_count = 0;
 /**Player number 0 for p2 and 1 for p1**/
-int playerNum = 0;
+int player_num = 0;
 /**The choice the player made to play with**/
-char playerChoice = 'M';
+char player_choice = 'M';
 /**The choice opponent chose to play with**/
-char opponentChoice = 0;
+char opponent_choice = 0;
 /**When choice is sent by p2, changed to 1**/
 int sent = 0;
 /**When received by p1 and p2, changed to 1**/

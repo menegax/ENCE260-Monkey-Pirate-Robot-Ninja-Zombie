@@ -11,7 +11,7 @@
 /**Assigns each board a player number**/
 void player_setup(void) 
 {
-    int playerChoice = 1;
+    int player_choice = 1;
     blinker_count = 0;
     
     while (1) {
@@ -20,21 +20,21 @@ void player_setup(void)
         navswitch_update ();
         tinygl_update();
 
-        if(playerChoice == 1) {
+        if(player_choice == 1) {
             tinygl_text("1");
-        } else if (playerChoice == 2) {
+        } else if (player_choice == 2) {
             tinygl_text("2");
         }
 
         if(navswitch_push_event_p (NAVSWITCH_NORTH) || navswitch_push_event_p (NAVSWITCH_SOUTH)) {
-            if(playerChoice == 1) {
-                playerChoice = 2;
+            if(player_choice == 1) {
+                player_choice = 2;
             } else {
-                playerChoice = 1;
+                player_choice = 1;
             }
         } else if(navswitch_push_event_p (NAVSWITCH_PUSH)) {
-            if (playerChoice == 1) {
-                setPlayer();
+            if (player_choice == 1) {
+                set_player();
             }
             break;
         }
